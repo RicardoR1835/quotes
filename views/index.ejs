@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <br>
+        <%- JSON.stringify(messages) %>
+            <% if(messages.input) { %>
+                <% for (var x of messages.input) { %>
+                    <h3><%= x %></h3>
+                <% } %>
+            <% } %>
+        <h1 class="text-center">Welcome to Quoting Dojo!</h1>
+        <br>
+        <form action='/quotes' method='post'>
+            <div class="form-group row col-7 mx-auto">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" name="name" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group row col-7 mx-auto">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Quote:</label>
+                <div class="col-sm-10">
+                    <textarea type="text" class="form-control" id="inputPassword3" placeholder="Quote" rows="4"
+                        name="quote"></textarea>
+                </div>
+            </div>
+            <p class="text-center"><input class="btn btn-primary" type="submit" value="Submit"></p>
+        </form>
+    </div>
+</body>
+
+</html>
