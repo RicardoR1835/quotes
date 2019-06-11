@@ -20,7 +20,7 @@
 <body>
     <div class="container-fluid">
         <br>
-        <%- JSON.stringify(messages) %>
+        <% JSON.stringify(messages) %>
             <% if(messages.input) { %>
                 <% for (var x of messages.input) { %>
                     <h3><%= x %></h3>
