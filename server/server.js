@@ -3,6 +3,7 @@ var session = require('express-session');
 var app = express();
 var path = require("path");
 var bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
@@ -17,8 +18,7 @@ const flash = require('express-flash');
 app.use(flash());
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/dojo_quotes');
-mongoose.Promise = global.Promise;
+
 
 app.use(express.static(path.join(__dirname, "./static")));
 app.set('views', path.join(__dirname, "../client/views"));

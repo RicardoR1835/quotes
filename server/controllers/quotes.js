@@ -1,5 +1,7 @@
 require('../models/quote.js');
 const mongoose = require('mongoose');
+require('../config/mongoose.js')
+
 var Quote = mongoose.model("Quote");
 module.exports = {
     index: function(req, res) {
@@ -9,6 +11,7 @@ module.exports = {
         console.log("POST DATA", req.body);
         var quote = new Quote({name: req.body.name, quote: req.body.quote});
         quote.save(function(err){
+            console.log("!!!!!!!!!!!!!!!!!!");
             if(err){
                 console.log("something went wrong", err);
             } else {
