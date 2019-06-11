@@ -1,4 +1,6 @@
-var Quote = require('../server.js');
+require('../models/quote.js');
+const mongoose = require('mongoose');
+var Quote = mongoose.model("Quote");
 module.exports = {
     index: function(req, res) {
     	res.render('index');

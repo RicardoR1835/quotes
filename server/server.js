@@ -18,14 +18,7 @@ app.use(flash());
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/dojo_quotes');
-var QuoteSchema = new mongoose.Schema({
-    name: {type: String, required: true, minlength: 3},
-    quote: {type: String, required: true, minlength: 10}
-}, {timestamps: true });
-mongoose.model('Quote', QuoteSchema);
-var Quote = mongoose.model('Quote');
 mongoose.Promise = global.Promise;
-module.exports = Quote;
 
 app.use(express.static(path.join(__dirname, "./static")));
 app.set('views', path.join(__dirname, "../client/views"));
