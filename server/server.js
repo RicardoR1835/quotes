@@ -25,7 +25,7 @@ var QuoteSchema = new mongoose.Schema({
 mongoose.model('Quote', QuoteSchema);
 var Quote = mongoose.model('Quote');
 mongoose.Promise = global.Promise;
-
+module.exports = Quote;
 
 app.use(express.static(path.join(__dirname, "./static")));
 app.set('views', path.join(__dirname, "../client/views"));
